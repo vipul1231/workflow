@@ -1,0 +1,51 @@
+{
+  "journey": {
+    "name": "detection_workflow_demo",
+    "tickets": [
+      {
+        "name": "cancel_order",
+        "step": "step_4"
+      }
+    ],
+    "process_variables": [
+      {
+        "name": "user",
+        "type": "string",
+        "value": "Vipul",
+        "comment": "Vipul created this detection workflow"
+      }
+    ],
+    "flow": [
+      {
+        "name": "start",
+        "component": "start",
+        "next": "step_1"
+      },
+      {
+        "name": "step_1",
+        "type": "step",
+        "component": "reconnaisance",
+        "user_data": "{\"tactics\":\"reconnaisance\",\"techniques\":\"T1499\",\"detection_description\":\"This is the test description for T1499\"}",
+        "next": "step_2",
+        "comment": "Get detailed information for the requested part"
+      },
+      {
+        "name": "step_2",
+        "component": "resource_development",
+        "user_data": "{\"tactics\":\"resource_development\",\"techniques\":\"T1699\",\"detection_description\":\"This is the test description fpr T1699\"}",
+        "next": "step_3"
+      },
+      {
+        "name": "step_3",
+        "component": "execution",
+        "user_data": "{\"tactics\":\"resource_development\",\"techniques\":\"T1899\",\"detection_description\":\"This is the test description fpr T1899\"}",
+        "next": "step_4"
+      },
+      {
+        "name": "step_4",
+        "component": "persistence",
+        "next": "end"
+      }
+    ]
+  }
+}
